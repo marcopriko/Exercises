@@ -1,4 +1,4 @@
-package examples.sorting;
+package com.example.sorting;
 
 public class TestInsSort {	
 
