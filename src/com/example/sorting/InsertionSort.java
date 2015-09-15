@@ -1,6 +1,6 @@
 package com.example.sorting;
 
-public class TestInsSort {	
+public class InsertionSort {	
 
 
 	public static void main(String[] args){
