@@ -1,4 +1,4 @@
-package ctci.chapter1.es1_3;
+package com.ctci.chapter1.es1_3;
 
 import java.util.HashMap;
 
