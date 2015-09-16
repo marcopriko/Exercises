@@ -1,14 +1,26 @@
 package com.example.sorting;
 
+import java.util.List;
+import java.util.Random;
+
 public class InsertionSort {	
 
 
 	public static void main(String[] args){
-		int[] array={5,2,4,33,-3,6,1,3};
+		/*int[] array={5,2,4,33,-3,6,1,3};
 		insertionSort2(array);
 		for(int i=0;i<array.length;++i)
 			System.out.print(array[i]+" ");
-		System.out.println();
+		System.out.println();*/
+		Random random = new Random();
+		int [] array = new int[400000];
+		for(int i=0;i<array.length;++i){
+			array[i]=random.nextInt(400000);
+		}
+		long start = System.currentTimeMillis();
+		insertionSort2(array);
+		System.out.println(System.currentTimeMillis()-start);
+
 	}
 	
 	public static void insertionSort2(int[] arr){
