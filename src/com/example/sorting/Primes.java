@@ -7,7 +7,6 @@ public class Primes {
 			if (primeBetter(i))
 				System.out.println(i+" is prime");
 		}
-
 	}
 
 	public static boolean primeNaive(int n){
@@ -16,8 +15,6 @@ public class Primes {
 		for(int i=2; i<n; i++){
 			if(n%i==0) return false;
 		}
-
-
 		return true;
 	}
 
@@ -30,5 +27,7 @@ public class Primes {
 		}	 
 		return true;
 	}
+	
+	
 
 }
