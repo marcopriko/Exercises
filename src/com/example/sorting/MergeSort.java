@@ -64,7 +64,7 @@ public class MergeSort {
 				i++;
 			} else {
 				mergedList.add(rightList.get(j));
-				j++;			
+				j++;
 			}
 		}
 
