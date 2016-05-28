@@ -20,7 +20,7 @@ public class SinglyLinkedList<E> {
 		public void setNext(Node<E> n){
 			next = n;
 		}
-		
+
 		public String toString(){
 			if(element==null) return null;
 			return element.toString();
@@ -62,7 +62,15 @@ public class SinglyLinkedList<E> {
 		header.setNext(newest);
 		size++;
 	}
-	
+
+	public E removeFirst(){
+		if(isEmpty()) return null;
+		E element = header.getNext().getElement();
+		header.setNext(header.getNext().getNext());
+		size--;
+		return element;
+	}
+
 	public String toString(){
 		if(isEmpty()) return "List is empty";
 		StringBuffer buf = new StringBuffer();	
