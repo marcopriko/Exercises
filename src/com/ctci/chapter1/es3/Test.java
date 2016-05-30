@@ -1,4 +1,4 @@
-package com.ctci.chapter1.es1_3;
+package com.ctci.chapter1.es3;
 
 import java.util.HashMap;
 
@@ -9,8 +9,8 @@ public class Test {
 	 */
 	public static void main(String[] args) {
 
-		String str1="|«d»”’e’rs’’]";
-		String str2="|«»s”’’er’d’]";
+		String str1="|«d»�?’e’rs’’]";
+		String str2="|«»s�?’’er’d’]";
 		System.out.println(isPermutation(str1,str2));
 	}
 
