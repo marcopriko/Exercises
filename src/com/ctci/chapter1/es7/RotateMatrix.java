@@ -1,4 +1,4 @@
-package com.ctci.chapter1.es6;
+package com.ctci.chapter1.es7;
 
 public class RotateMatrix {
 

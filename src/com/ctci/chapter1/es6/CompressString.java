@@ -1,4 +1,4 @@
-package com.ctci.chapter1.es5;
+package com.ctci.chapter1.es6;
 
 public class CompressString {
 

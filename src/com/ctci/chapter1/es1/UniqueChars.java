@@ -1,10 +1,12 @@
 package com.ctci.chapter1.es1;
 
+import java.util.HashSet;
+
 public class UniqueChars {
 
 	public static void main(String[] args) {
-		String str = "abcsdertksy";
-		System.out.println(hasUniqueChars2(str));
+		String str = "abcdefsd";
+		System.out.println(isUnique(str));
 		for (Character i: str.toCharArray()){
 			System.out.print(i+" ");
 		}
@@ -47,6 +49,18 @@ public class UniqueChars {
 		}
 		return true;
 		
+	}
+	
+	public static boolean isUnique(String str){
+		
+		HashSet<Character> hashset = new HashSet<>();
+		for(Character chr:str.toCharArray()){
+			if(hashset.contains(chr))
+			  return false;
+			hashset.add(chr);
+		}
+		
+		return true;
 	}
 	
 	

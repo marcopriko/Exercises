@@ -1,4 +1,4 @@
-package com.ctci.chapter1.es7;
+package com.ctci.chapter1.es8;
 
 public class SetZerosMatrix {
 
