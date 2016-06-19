@@ -1,4 +1,4 @@
-package com.example.dsa.test;
+package com.dsa.examples.test;
 
 import java.util.Arrays;
 

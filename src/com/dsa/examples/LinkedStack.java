@@ -1,4 +1,4 @@
-package com.example.dsa;
+package com.dsa.examples;
 
 public class LinkedStack<E> implements Stack<E>{
 	

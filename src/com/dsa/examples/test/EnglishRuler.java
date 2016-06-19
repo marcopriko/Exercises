@@ -1,4 +1,4 @@
-package com.example.dsa.test;
+package com.dsa.examples.test;
 
 public class EnglishRuler {
 

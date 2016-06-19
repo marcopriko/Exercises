@@ -1,4 +1,4 @@
-package com.example.dsa;
+package com.dsa.examples;
 
 /** A simplified version of the java.util.List interface. */
  public interface List<E> { 

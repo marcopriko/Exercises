@@ -1,6 +1,6 @@
-package com.example.dsa.test;
+package com.dsa.examples.test;
 
-import com.example.dsa.SinglyLinkedList;
+import com.dsa.examples.SinglyLinkedList;
 
 public class TestSinglyLinkedList {
 
