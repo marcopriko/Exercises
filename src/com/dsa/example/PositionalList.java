@@ -1,4 +1,4 @@
-package com.dsa.examples;
+package com.dsa.example;
 
 /** An interface for positional lists. */
 public interface PositionalList<E> {
