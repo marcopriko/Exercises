@@ -5,6 +5,7 @@ import java.util.HashSet;
 public class SLList{
 	
 	SLListNode head = null;
+	int size=0;
 
 	public SLList(){
 	}
@@ -20,16 +21,20 @@ public class SLList{
 			}
 			n.setNext(newNode);	
 		}
+		size++;
 		
 	}
 	
 	public boolean isEmpty(){
-		return (head==null);
+		return (size==0);
 	}	
 	
 	public SLListNode getHead(){
 		return head;
 	}	
+	public int getSize(){
+		return size;
+	}
 	
 
 	public String printList(){
