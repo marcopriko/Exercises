@@ -31,7 +31,7 @@ public class RemoveDups {
 		list.appendToTail(12);
 		
 		//list.deleteDups2();
-		removeDups(list);
+		//removeDups(list);
 		
 		StringBuilder buff = new StringBuilder();
 		while(cur!=null){
@@ -39,6 +39,7 @@ public class RemoveDups {
 			cur=cur.next;
 		}
 		System.out.println(buff.toString());
+		System.out.println(list.hashCode());
 	}
 	
 	public static void removeDups(LLN head){
