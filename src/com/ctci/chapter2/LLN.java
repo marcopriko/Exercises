@@ -9,6 +9,11 @@ public class LLN{
 		setNext(n);
 		setPrev(p);
 	}
+	
+	public LLN(int d, LLN n){
+		data = d;
+		next = n;
+	}
 
 	public void setNext(LLN n){
 		next = n;
