@@ -1,4 +1,4 @@
-package com.tc.example;
+package com.tc.initials;
 
 public class Test {
 
