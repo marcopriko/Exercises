@@ -32,6 +32,9 @@ public class TestGraphAlgs {
 
 
 		graph.DFS();
+		//graph.DFSrec();
+		System.out.println();
+		graph.BFS();
 	}
 
 }

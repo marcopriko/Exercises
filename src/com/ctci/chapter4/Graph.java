@@ -2,7 +2,10 @@ package com.ctci.chapter4;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
 
 public class Graph<T> {
@@ -26,8 +29,9 @@ public class Graph<T> {
 		nodes.add(node2);
 	}
 
+
 	public void DFS(){
-		HashSet<GNode<T>> visitedNodes = new HashSet<>();
+		Set<GNode<T>> visitedNodes = new HashSet<>();
 		for(GNode<T> node: nodes){
 			if(!visitedNodes.contains(node)){
 				DFS(node, visitedNodes);
@@ -36,22 +40,29 @@ public class Graph<T> {
 		}
 	}
 
-	private void DFS(GNode<T> startNode, HashSet<GNode<T>> visitedNodes ){
-		Stack<GNode<T>> stack = new Stack<>();
-		stack.push(startNode);
-		while(!stack.isEmpty()){
-			GNode<T> cur = stack.pop();
-			if(!visitedNodes.contains(cur)){
-				cur.visit();
-				visitedNodes.add(cur);
-			}
-			for (GNode<T> node: cur.adj){
-				stack.push(node);
+	public void DFSrec(){
+		Set<GNode<T>> visitedNodes = new HashSet<>();
+		for(GNode<T> node: nodes){
+			if(!visitedNodes.contains(node)){
+				DFSrec(node, visitedNodes);
+				System.out.println();
 			}
 		}
 	}
 
-	private void DFSrec(GNode<T> curNode, HashSet<GNode<T>> visitedNodes ){
+	public void BFS(){
+		HashSet<GNode<T>> visitedNodes = new HashSet<>();
+		for(GNode<T> node: nodes){
+			if(!visitedNodes.contains(node)){
+				BFS(node, visitedNodes);
+				System.out.println();
+			}
+		}
+
+	}
+
+
+	private void DFSrec(GNode<T> curNode, Set<GNode<T>> visitedNodes ){
 		if(!visitedNodes.contains(curNode)){
 			curNode.visit();
 			visitedNodes.add(curNode);	
@@ -61,12 +72,37 @@ public class Graph<T> {
 		}
 	}
 
-
-
-	public void BFS(){
-		HashSet<GNode<T>> visitedNodes = new HashSet<>();
-
+	private void DFS(GNode<T> startNode, Set<GNode<T>> visitedNodes ){
+		Stack<GNode<T>> stack = new Stack<>();
+		stack.push(startNode);
+		while(!stack.isEmpty()){
+			GNode<T> cur = stack.pop();
+			cur.visit();
+			visitedNodes.add(cur);
+			for (GNode<T> node: cur.adj){
+				if(!visitedNodes.contains(node)){
+					stack.push(node);
+				}
+			}
+		}
 	}
+
+	private void BFS(GNode<T> startNode, Set<GNode<T>> visitedNodes ){
+		Queue<GNode<T>> queue = new LinkedList<>();
+		visitedNodes.add(startNode);
+		queue.add(startNode);
+		while(!queue.isEmpty()){
+			GNode<T> cur = queue.poll();	
+			cur.visit();
+			for (GNode<T> node: cur.adj){
+				if(!visitedNodes.contains(node)){
+					visitedNodes.add(node);
+					queue.add(node);
+				}
+			}
+		}
+	}
+
 }
 
 
