@@ -1,4 +1,4 @@
-package com.ctci.chapter4.es3;
+package com.ctci.chapter4.es4;
 
 
 public class TreeNode {
@@ -22,5 +22,32 @@ public class TreeNode {
 		node.left = createMinimalBT(unsortedArray, start, mid - 1);
 		node.right = createMinimalBT(unsortedArray, mid + 1, end);
 		return node;
+	}
+	
+	
+	public static TreeNode TInsert(TreeNode root, int elem){
+		if(root == null)
+			return new TreeNode(elem);
+		TreeNode x = root;
+		TreeNode y = null;
+		
+		while(x!=null){
+			y = x;
+			if(elem <= x.data)
+				x = x.left;
+			else
+				x = x.right;
+		}
+		
+		TreeNode z = new TreeNode(elem);
+		z.parent = y;
+		
+		if(elem <= y.data)
+			y.left = z;
+		else
+			y.right = z;
+		
+		return z;
+		
 	}
 }
