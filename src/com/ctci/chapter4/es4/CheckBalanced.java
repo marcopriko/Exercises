@@ -7,8 +7,6 @@ import java.util.Random;
 public class CheckBalanced {
 
 	public static void main(String[] args) {
-		//		int [] unsortedArray = {0,15,1,2,3,4,5,6,7,8,9,10,12,17,8};
-		//		TreeNode root = TreeNode.createMinimalBT(unsortedArray);
 
 		Random random = new Random();
 
@@ -21,9 +19,12 @@ public class CheckBalanced {
 
 		BTreePrinter.prinTreeNode(root);
 
-		System.out.println(checkBalanced(root));
+		System.out.println(checkBalancedCTCI(root));
 	}
 
+	/*
+	 * my impl
+	 */
 	public static boolean checkBalanced(TreeNode node){		
 		HashMap<TreeNode, Integer> heights = new HashMap<>();
 		height(node, heights); 		
@@ -46,4 +47,51 @@ public class CheckBalanced {
 			return height;
 		}
 	}
+	
+	/*
+	 * bad impl
+	 */
+	
+	private static int getHeight(TreeNode root){
+		if(root==null) return -1;
+		return 1 + Math.max(getHeight(root.left),getHeight(root.right));
+	}
+	
+	public static boolean checkBalancedBad(TreeNode root){
+		if(root==null) return true;
+		
+		int heightDiff = getHeight(root.left) - getHeight(root.right);
+		if(Math.abs(heightDiff) > 1){
+			return false;
+		} else {
+			return checkBalancedBad(root.left) && checkBalanced(root.right);
+		}
+	}
+	
+	/*
+	 * book impl
+	 */
+	
+	private static int checkHeight(TreeNode root){
+		if(root==null) return -1;
+		
+		int leftheight = checkHeight(root.left);
+		if(leftheight == Integer.MIN_VALUE) return Integer.MIN_VALUE;
+		
+		int rightheight = checkHeight(root.right);
+		if(rightheight == Integer.MIN_VALUE) return Integer.MIN_VALUE;
+		
+		int heightDiff = leftheight - rightheight;
+		if(Math.abs(heightDiff) > 1){
+			return Integer.MIN_VALUE;
+		} else {
+			return Math.max(leftheight, rightheight) + 1;
+		}
+	}
+	
+	public static boolean checkBalancedCTCI(TreeNode root){
+		return checkHeight(root) != Integer.MIN_VALUE;
+	}
+	
+	
 }
